@@ -1,0 +1,68 @@
+import BlogTitle from '../../components/blogTitle'
+
+<BlogTitle
+    title={'Sign in with Adobe in a Next.js App'}
+    date={'Oct 20, 2023'}
+    authorName={'Saad Bazaz'}
+    authorAvatar={undefined}
+/>
+
+<div 
+    style={{
+        fontSize: '1.25rem',
+        lineHeight: '1.75rem',
+        marginTop: '24px',
+        marginBottom: '24px',
+        fontWeight: 400,
+        fontStyle: 'normal',
+        fontStretch: 'normal',
+        letterSpacing: 'normal',
+        textAlign: 'left',
+    }}
+>
+You can see the relevant Pull Request, and all the provider's code mentioned in this article, on GitHub: https://github.com/nextauthjs/next-auth/pull/8890
+
+Whether you're a seasoned Auth geek, or a newbie, NextAuth (soon, Authjs.dev) is the auth lib to use. That's why we chose it for Omni, since we needed a stable Auth solution so we could focus on experience.
+
+Adobe is a popular platform for creatives, and is widely used (obviously) internally at Adobe. From Behance, to Creative Cloud, and to Adobe Stock and many more, it's sort of the defacto for professional creatives. I believe it's a staple for products building in the art, media and design space, and sits right next to Google and ArtStation, and that made it a low-hanging fruit as an authentication feature for Omni's tools.
+
+This article has been made after painful hours understanding Adobe's OAuth 2.0 documentation. But there's one thing I'm grateful for; standards in the boring stuff. OAuth 2.0 has really made life much easier than before. The wild days of crappy Auth setups are long gone, and almost all major providers follow the standard to quite an extent, making integrations a breeze. At least for the libraries and builders who understand the standard.
+
+How to implement Adobe OAuth 2.0 Authentication
+1. Create an account on Adobe's Developer Console
+Pretty straightforward. Use your team's account to create a Developer account on Adobe. You should be able to see a console here: https://developer.adobe.com/console/home
+
+An important question: What information do you want from Adobe? This is something that differs for each app. In our case, we just needed the bare minimum, so we went with Adobe Stock. You can see all the available scopes in OAuth 2.0 here.
+
+2. Create a project
+On the Adobe Developer Console, create a new project for the app you're working on.
+
+3. Add an API
+In the project you just created, you need to add an API.
+
+We chose Adobe Stock here, as mentioned earlier, because it gave us what we needed at the bare minimum.
+
+Make sure to choose an API with the OAuth Web App option. That's the one which'll work with Next.js. Read more on all the types here.
+
+4. Configure the Credential
+Default redirect URI: This is the domain where you're hosting your app. Use https.
+
+Redirect URI pattern: This is a regex. This is the one I use:
+
+5. Install NextAuth
+Read more on that here. Set it up as per your requirements.
+
+6. Add the Adobe Provider
+If, by the time you're reading this article, our PR is not part of the main source code, you'll have to add a custom OAuth Provider. No worries, here's the code for that:
+
+This setup is particularly useful if you're using Vercel for deployments, because it enables you to have Auth working on all your preview deployments.
+
+Make sure to use the correct environment variables above. You can get the ADOBE_CLIENT_ID and ADOBE_CLIENT_SECRET from the Adobe Developer Console.
+
+You're done!
+Test and make sure things are working good. NextAuth has a cool debug mode which shows you the data coming in.
+
+If this works for you, or you have ideas for better auth, drop a comment. Would also love if you could review the PR, if you're into that kind of stuff.
+
+At Grayhat, we build insane experiences and love to challenge tech to the point where it breaks. Security is a forefront too, hence our focus on good auth in this blog. If you're interested in our work, check out our website or DM us. We'd love to work with you!
+</div>

@@ -1,0 +1,66 @@
+import BlogTitle from '../../components/blogTitle'
+
+<BlogTitle
+    title={'Automatons and AI for JavaScript Junkies'}
+    date={'Dec 11, 2023'}
+    authorName={'Saad Bazaz'}
+    authorAvatar={undefined}
+/>
+
+<div 
+    style={{
+        fontSize: '1.25rem',
+        lineHeight: '1.75rem',
+        marginTop: '24px',
+        marginBottom: '24px',
+        fontWeight: 400,
+        fontStyle: 'normal',
+        fontStretch: 'normal',
+        letterSpacing: 'normal',
+        textAlign: 'left',
+    }}
+>
+Automatons are the forerunners to AI, but don’t underestimate them. They’re cheap, fast, predictable, and do their job perfectly.
+
+What’s the difference? Both AI and Automatons branch out from the Theory of Automata, which is a foundational concept of computing. It sees the world as consequences and actions (in their terminology, “states” and “transitions”). Automatons start off very simple; they carry out tasks in a deterministic fashion. Consider it like a branch of finite possibilities, and at each state, it decides to move to the next state or stay on the current one. AI (especially deep learning) can be seen as a complex Automatons with the ability to “learn”.
+
+TLDR; Automatons work on data, AI understands it.
+<br/>
+The problem
+At Omni, we wanted to utilize Vercel’s Serverless Architecture to deliver video and audio content to multiple platforms, WhatsApp being the first. We leaned towards Vercel’s Edge functions due to the mass scale at which they can operate, and due to the cheap cost and long function runtimes.
+
+Unlike a standard server, Serverless cannot have context. Each function invocation is independent from the other. We needed a solution to persist state between function invocations, and we needed to make it robust for our product roadmap; there are tonnes of features more to be implemented.
+
+We wanted to have a conversational flow with the user. Having an “if else” sort of situation would get messy very quickly. We couldn’t be restricted by bot libraries because 1) The Edge is very picky about libraries; many JavaScript libraries are not supported, 2) Making external API calls for the bot would be a costly resource, 3) We needed to actually render content, and we weren’t too sure about how that would play out in a restricted environment.
+
+Stumbling upon states
+Luckily, I’d taken a course on Formal Methods back in uni. We’d made states in two boomer Eclipse tools called SPIN and UPPAAL. I knew we needed something similar. We needed something which could “pause” and “resume” work from any point, and knew exactly what to do. But there was no way I was going back to Eclipse. Then we discovered XState.js.
+
+State management is a challenge on the web, giving rise to Redux, Zustand, and many more state management libs. XState solves that using academic principles of state management. It’s also got a snazzy web editor, reminiscent of my Eclipse days, but at least with good UI.
+
+PS: If a professor is reading this, please utilize new libraries like these in your classrooms, instead of dinosaur-age software which was prime in your days. This stuff is more relevant to students and can help them solve actual problems.
+
+Building
+We used the online editor to build the states, with the help of our research partner Haroon Ali. The online editor gave us the equivalent JS code, and we loaded the now-deprecated XState 4. Worked well in Edge. Here’s our original diagram:
+
+Xstate Machine original diagram
+
+
+However, it turns out that academic theory is a bit different from practical; we ended up having to add reusable guards on JavaScript to keep our code sane. Now that it was a reusable and clean machine, we created a Factory Function that would generate a flavored machine for every platform; WhatsApp, Telegram, and WeChat.
+
+Our highest priority is maintenance and ease of adding new features. Since we’re only two developers, it would mean the death of our product if it took too long to adapt to new features.
+
+Cons
+Predictable death
+XState has no predictable way of knowing when its transitions have stopped. That was bad for us, because as soon as we returned a response to the user, our serverless function was killed. To tackle that, we polled the machine every few seconds to see if there was still any activity.
+
+Always
+We use the “always” keyword in XState to auto-transition to states. However, there’s no way to repeat an “entry” action when the state loops on itself. So our bots are quiet when they’re stuck at a state.
+
+Cache states
+This is more of a Vercel Edge problem than an Xstate problem, but if there was a more performant (and, as always, cheap!) way of retrieving userstate, we would shift to that. We’ve checked out Vercel KV, but that seems a bit overkill for now.
+
+Are you a developer? Have you really read all this through? Bruh. If yes, we’d love to hear your solutions!
+
+We're building AI-powered dubbing tools at scale and at precision, at Omni. If you're interested in our API, or interested in joining our team, hit us up.
+</div>
