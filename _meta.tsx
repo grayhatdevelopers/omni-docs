@@ -2,16 +2,19 @@ export default {
     'index': {
         title: 'Introduction'
     },
-    'try-us-out': {
-        title: 'Try Us Out'
-    },
     'readme': {
         title: 'Open Source'
     },
-    '---': {
+    '-': {
+        type: 'separator'
+    },
+    'guide': {
+        title: 'Guides',
+    },
+    '--': {
         type: 'separator'
     },
     'blog': {
-        title: 'Blog',
+        title: 'Blogs',
     }
 }
