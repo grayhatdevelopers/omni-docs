@@ -19,7 +19,7 @@ export default {
         title: 'Introduction',
         "theme": {
             "layout": "full"
-          }
+        }
     },
     'readme': {
         title: 'Open Source'
@@ -31,19 +31,29 @@ export default {
     'guide': {
         title: 'Guides for integrations',
     },
-    'creatives': {
+    'creative-tools': {
         title: 'Creative suite',
+        defaultMenuCollapsed: true
     },
     '-- Commercial use': {
         type: 'separator',
         "title":  <SidebarTitleComponent>Commercial use</SidebarTitleComponent>
     },
-    'use-cases': {
-        title: 'Use cases',
+    'commercial': {
+        title: 'Commercial',
+        "display": "children",
     },
-    'pricing': {
-        title: 'Pricing',
+    // 'commercial/getting-started': {
+    //     title: 'Getting Started',
+    // },
+    'upload-content': {
+        title: 'Send us your content ↗',
+        "href": "https://getomni.app/api",
+        "newWindow": true
     },
+    // 'pricing': {
+    //     title: 'Pricing',
+    // },
     '-- For developers': {
         type: 'separator',
         "title": <SidebarTitleComponent>For developers</SidebarTitleComponent>
