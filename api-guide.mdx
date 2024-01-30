@@ -1,0 +1,108 @@
+---
+title: "API Docs"
+---
+
+import {Callout} from 'nextra/components'
+
+# Using the API
+
+We've made our API available to developers so they can utilize the raw power of Omni, and build on top of it.
+
+See the [API Reference](https://getomni.app/api) for more details.
+
+## SDKs
+
+<Callout type='info'>
+    We're currently building this feature.
+</Callout>
+
+We're building SDKs in Node and Python to enable developers to whip up scripts, quicker.
+
+## End-to-end Models
+
+When invoking our API, you may choose a model according to your use case. The details are below:
+
+| Name   | Speed | Quality | Supported features
+| :----- | :----: | :----: |----: |
+| `babelfish-micro`    |  Fastest   |  Low | Audio only |
+| `babelfish` | Fast  |  Medium |   Audio, video |
+| `solomon` | Slow  |  High |   Audio, video |
+
+## All languages
+
+The following is a list of **all** languages supported by Omni, whether as a source or a target language.
+This may be useful as a reference for *language codes* and corresponding language names.
+{
+<table>
+  <thead>
+    <tr>
+      <th>Language</th>
+      <th>Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+  {
+    label: 'English',
+    value: 'en'
+  },
+  {
+    label: 'German',
+    value: 'de'
+  },
+  {
+    label: 'French',
+    value: 'fr'
+  },
+  {
+    label: 'Spanish',
+    value: 'es'
+  },
+  {
+    label: 'Mandarin Chinese',
+    value: 'zh-CN'
+  },
+  {
+    label: 'Italian',
+    value: 'it'
+  },
+  {
+    label: 'Polish',
+    value: 'pl'
+  },
+  {
+    label: 'Portuguese',
+    value: 'pt'
+  },
+  {
+    label: 'Turkish',
+    value: 'tr'
+  },
+  {
+    label: 'Russian',
+    value: 'ru'
+  },
+  {
+    label: 'Dutch',
+    value: 'nl'
+  },
+  {
+    label: 'Czech',
+    value: 'cs'
+  },
+  {
+    label: 'Arabic',
+    value: 'ar'
+  },
+  {
+    label: 'Japanese',
+    value: 'ja'
+  }
+].map(item => (
+      <tr key={item.label}>
+        <td>{item.label}</td>
+        <td>{item.value}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>}

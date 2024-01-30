@@ -7,7 +7,7 @@ export default {
         "type": "page",
         "href": "https://getomni.app"
       },
-      "api": {
+      "api-docs": {
         "title": "API ↗",
         "type": "page",
         "href": "https://getomni.app/api",
@@ -48,7 +48,7 @@ export default {
         type: 'separator',
         "title": <SidebarTitleComponent>For developers</SidebarTitleComponent>
     },
-    'API': {
+    'api-guide': {
         title: 'API',
     },
     'examples': {
