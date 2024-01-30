@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+@media screen and (prefers-color-scheme: light) {
+    .omni-logo {
+        -webkit-text-stroke: #fff !important;
+    }
+}
+
+/* @media (prefers-color-scheme: dark) {
+    .omni-logo {
+        -webkit-text-stroke: #fff !important;
+    }
+}
+.omni-logo[data-theme='dark'] {
+    -webkit-text-stroke: #fff !important;
+} */
+
+.omni-logo {
+    font-size: 2rem;
+    color: transparent;
+    -webkit-text-stroke: #fff;
+    -webkit-text-stroke-width: 0.4px;
+    paint-order: stroke fill;
+
+    /* text-shadow:
+    -0.1px -0.1px 0 #fff,
+     0   -0.1px 0 #fff,
+     0.1px -0.1px 0 #fff,
+     0.1px  0   0 #fff,
+     0.1px  0.1px 0 #fff,
+     0    0.1px 0 #fff,
+    -0.1px  0.1px 0 #fff,
+    -0.1px  0   0 #fff; */
+}
+
+.glowing-element {
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #03a9f4, #441a5, #feb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 10px;
+    z-index: 1;
+    position: relative;
+}
+
+.glowing-element:hover {
+    animation: animate 8s linear infinite;
+}
+
+.glowing-element:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 20px;
+    opacity: 0%;
+    transition: 0.5s;
+}
+
+.glowing-element:hover:before {
+    filter: blur(50px);
+    opacity: 1;
+    animation: animate 8s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}
