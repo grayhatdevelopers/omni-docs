@@ -29,7 +29,7 @@ export default {
         "title": <SidebarTitleComponent>For users</SidebarTitleComponent>
     },
     'guide': {
-        title: 'Guides for integrations',
+        title: 'Guides for Integrations',
     },
     'creative-tools': {
         title: 'Creative suite',
@@ -48,7 +48,7 @@ export default {
     // },
     'upload-content': {
         title: 'Send us your content ↗',
-        "href": "https://getomni.app/api",
+        "href": "https://docs.google.com/forms/d/1begM4VfB0s5kWDUXLhwviJXF8QoRekW8fafNuv25bJY/viewform?edit_requested=true",
         "newWindow": true
     },
     // 'pricing': {
@@ -58,12 +58,13 @@ export default {
         type: 'separator',
         "title": <SidebarTitleComponent>For developers</SidebarTitleComponent>
     },
-    'api-guide': {
-        title: 'API',
+    'developers': {
+        title: 'For Developers',
+        display: 'children'
     },
-    'examples': {
-        title: 'Examples',
-    },
+    // 'examples': {
+    //     title: 'Examples',
+    // },
     
 
     '--': {

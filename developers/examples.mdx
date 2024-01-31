@@ -1,0 +1,73 @@
+import {Callout} from 'nextra/components'
+
+# Examples of API Usage
+
+We've built some common use cases for both copy-pasting, and to help developers.
+
+See the [API Reference](https://getomni.app/api) to see the API endpoints.
+
+<Callout>
+Would you like to add an example? Open a [Pull Request](https://github.com/grayhatdevelopers/omni-docs/blob/main/developers/examples.mdx) on this page.
+</Callout>
+
+## Different models, different use cases.
+
+You can create scripts which use models conditionally. In the following NodeJS example, we use `babelfish-micro` for audios, and `babelfish` for video.
+
+```typescript copy showLineNumbers filename="dub_script.js"
+const axios = require('axios');
+const readline = require('readline');
+const fs = require('fs');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+function promptUser() {
+  rl.question('Enter the path of the file: ', async (filePath) => {
+    try {
+      const fileBuffer = fs.readFileSync(filePath);
+
+      const isAudioFile = isAudio(filePath);
+      const model = isAudioFile ? 'babelfish-micro' : 'babelfish';
+      const preserveBackground = !isAudioFile;
+      const preservePace = !isAudioFile;
+
+      const response = await sendRequest(fileBuffer, model, preserveBackground, preservePace);
+
+      console.log('Response:', response.data);
+    } catch (error) {
+      console.error('Error:', error.message);
+    } finally {
+      rl.close();
+    }
+  });
+}
+
+function isAudio(filePath) {
+  const audioExtensions = ['.mp3', '.wav', '.ogg', '.aac', '.flac'];
+  const fileExtension = filePath.toLowerCase().slice(filePath.lastIndexOf('.'));
+  return audioExtensions.includes(fileExtension);
+}
+
+async function sendRequest(fileBuffer, model, preserveBackground, preservePace) {
+  const apiUrl = 'https://getomni.app/api/dub';
+
+  const formData = new FormData();
+  formData.append('file', fileBuffer, { filename: 'audio_or_video_file' });
+  formData.append('modelName', model);
+  formData.append('preserveBackground', preserveBackground);
+  formData.append('preservePace', preservePace);
+
+  const response = await axios.post(apiUrl, formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  });
+
+  return response;
+}
+
+promptUser();
+```
