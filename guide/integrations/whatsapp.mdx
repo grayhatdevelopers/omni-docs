@@ -1,5 +1,5 @@
 import ReactPlayer from 'react-player'
-
+import { Bleed } from 'nextra-theme-docs'
 
 # WhatsApp Bot Docs
 
@@ -10,7 +10,11 @@ import ReactPlayer from 'react-player'
     justifyContent: 'center',
     margin: '1.5rem'
 }}>
-<ReactPlayer url='https://www.youtube.com/watch?v=d74lL7PRxcU' autoPlay muted={true} controls={false}/>
+<Bleed>
+    <ReactPlayer style={{
+        width: '100%'
+    }} url='https://www.youtube.com/watch?v=d74lL7PRxcU' autoPlay muted={true} controls={false}/>
+</Bleed>
 </div>
 
 ## Omni WhatsApp Bot: User Guide
