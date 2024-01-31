@@ -4,6 +4,10 @@
     font-family: 'Quicksand', sans-serif;
 }
 
+.nextra-code * {
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
 @media screen and (prefers-color-scheme: light) {
     .omni-logo {
         -webkit-text-stroke: #fff !important;
