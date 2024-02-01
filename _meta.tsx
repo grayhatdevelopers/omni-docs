@@ -70,8 +70,18 @@ export default {
     '--': {
         type: 'separator',
     },
+    'request-a-feature': {
+        title: '🚀 Request a feature',
+        "href": "https://getomni.canny.io/feature-requests",
+        "newWindow": true
+    },
+    'bugs': {
+        title: '🐛 Report a bug',
+        "href": "https://getomni.canny.io/bugs",
+        "newWindow": true
+    },
     'blog': {
-        title: 'Blogs',
+        title: '📕 Blogs',
     },
 
 
