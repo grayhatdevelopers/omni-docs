@@ -5,6 +5,7 @@ title: "Introduction"
 import Link from 'next/link'
 import styles from './index.module.css'
 import {BlogLatestCard} from "../components/blogIndex"
+import SocialBadges from "../components/SocialBadges"
 // import SupportedEngines from "../components/SupportedEngines.mdx"
 
 <img src={"/docs/images/balls-in-os-ezgif.com-optimize.gif"} style={{position: 'absolute', width: "100%", top: 0, left: 0, opacity:0.4, zIndex: -1, mixBlendMode: 'exclusion'}} autoPlay muted loop />
@@ -16,5 +17,11 @@ import {BlogLatestCard} from "../components/blogIndex"
 </h3>
 
 <Link className={styles.cta} href="/guide/integrations/whatsapp">Dub your voice <span>→</span></Link>
+
+<div className="mt-12 opacity-50 hover:opacity-100 transition-all">
+<h4 style={{fontWeight: 400, lineHeight: "92%", fontSize: "1rem", margin: "2rem 0rem 1rem"}}>Follow Omni on social media</h4>
+<SocialBadges />
+</div>
+
 </div>
 
