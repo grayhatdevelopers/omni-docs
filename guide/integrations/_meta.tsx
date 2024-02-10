@@ -1,14 +1,13 @@
+import guides from "../../../data/guide"
+
+const guideObj = guides.map(guide => ({
+    id: guide.id,
+    title: guide.type + " " + guide.name + ` (${guide.status === 'inactive' ? "Coming soon" : guide.status})` 
+})).reduce((acc, obj) => {
+    acc[obj.id] = obj;
+    return acc;
+  }, {});
+
 export default {
-    'whatsapp': {
-        title: 'OmniDub for WhatsApp (Alpha)',
-    },
-    'discord': {
-        title: 'OmniDub for Discord (Coming soon)',
-    },
-    'wechat': {
-        title: 'OmniDub for WeChat (Coming Soon)',
-    },
-    'telegram': {
-        title: 'OmniDub for Telegram (Coming Soon)',
-    }
+    ...guideObj
 }
