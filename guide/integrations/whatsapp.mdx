@@ -1,21 +1,33 @@
 import ReactPlayer from 'react-player'
 import { Bleed } from 'nextra-theme-docs'
+import Link from 'next/link'
+import Image from 'next/image'
 
-# WhatsApp Bot Docs
-
+# OmniDub for WhatsApp
 
 <div style={{
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    margin: '1.5rem'
+    height: 'fit',
+    marginTop: '1.5rem',
 }}>
 {/* <Bleed> */}
     <ReactPlayer style={{
-        width: '100%'
+        display: 'flex',
+        flex: 1,
+        width: '100%',
+        height: '100%',
+        minHeight: 'fit'
     }} url='https://www.youtube.com/watch?v=d74lL7PRxcU' autoPlay muted={true} controls={true}/>
 {/* </Bleed> */}
 </div>
+
+
+Use the official WhatsApp account for quick, on-the-go dubbing.
+
+## Get started
+Just drop a message to our official WhatsApp number, <Link className="underline" href={"https://wa.me/923037869202?text=Hey!%20I'd%20like%20to%20dub%20a%20video."} target="_blank">+923037869202</Link>.
 
 ## Omni WhatsApp Bot: User Guide
 
@@ -30,85 +42,124 @@ With OmniDub, you can effortlessly translate your voice notes into any language 
 
 </div>
 
-### Step - 1
-Visit the [omni](https://www.getomni.app/) platform and navigate to the [tools](https://www.getomni.app/tools) page.<br/>Scroll down to find the ['Dub'](https://www.getomni.app/dub) bot.
+### Start a Conversation
+Send any message, for example, a simple 'Hey' to start a conversation with the bot.
 
 <div style={{
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 30,
+    width: '100%'
 }}>
-    <img src="https://i.imgur.com/BlIY4QH.jpeg" width={500} />
+    <Image src="/docs/images/integrations/guides/whatsapp/OmniDub for WhatsApp - 1.png" width={1000} height={600} style={{
+        width: '100%',
+        height: 'auto',
+        objectFit: 'contain'
+    }} />
 </div>
 
-### Step - 2
-Click on the 'WhatsApp' icon to add the bot.
+
+### Send a Voice Note
+Hold the "Record" button to record a voice note, and speak whatever you want to be dubbed.
 
 <div style={{
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 30,
+    width: '100%'
 }}>
-    <img src="https://i.imgur.com/uKrOdUh.jpeg" width={500} />
+    <Image src="/docs/images/integrations/guides/whatsapp/OmniDub for WhatsApp - 2.png" width={1000} height={600} style={{
+        width: '100%',
+        height: 'auto',
+        objectFit: 'contain'
+    }} />
 </div>
 
-After that, you will be navigated to the WhatsApp application and a new chat will be opened with the bot with a default message already loaded.
+### See Supported Languages
+The bot will respond with a message giving you a wide range of languages to choose from. Tap the button "Choose a language" button to open the list of supported languages.
 
-### Step - 3
-
-#### Start a Conversation
-- Send the default message i.e., 'Hey! I'd like to dub a video.' to start a conversation with the bot and then follow the guide accordingly.
+> Some languages may not be visible in the list, due to WhatsApp's constraints. For a complete list of supported languages, click [here](./supported-languages).
 
 <div style={{
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 30,
+    width: '100%'
 }}>
-    <img src="https://i.imgur.com/YJqEj76.jpeg" width={500} />
+    <Image src="/docs/images/integrations/guides/whatsapp/OmniDub for WhatsApp - 3.png" width={1000} height={600} style={{
+        width: '100%',
+        height: 'auto',
+        objectFit: 'contain'
+    }} />
 </div>
 
+### Choose a Target Language
 
-#### Send a Voice Note
-- After that, you will have to send the voice note you need converted to the bot.
+Choose a language from the list. This will be the language your voice note will be dubbed into. 
+
+Tap on a language, then tap the select button at the bottom. This will reply to the bot with the language you selected.
+
+_Hint:_ Instead of choosing from this list, you can also simply **reply** to the bot with the language you'd like your voice note dubbed into. For example, just respond with "Arabic" to this message, to dub into Arabic!
 
 <div style={{
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 30,
+    width: '100%'
 }}>
-    <img src="https://i.imgur.com/rErkROD.jpeg" width={500} />
+    <Image src="/docs/images/integrations/guides/whatsapp/OmniDub for WhatsApp - 4.png" width={1000} height={600} style={{
+        width: '100%',
+        height: 'auto',
+        objectFit: 'contain'
+    }} />
 </div>
 
-#### Choose a Language
-- The bot will respond with a message giving you a wide range of languages to choose from. That language will be the language of the resultant audio the bot will send to you.
+### Conversion in Progress
+
+Once you select a language, the bot will then get to work!
+
+It may take a small duration for it to dub your voice note, however, it should respond to you with an "in progress" message.
 
 <div style={{
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 30,
-
+    width: '100%'
 }}>
-    <img src="https://i.imgur.com/qZURrTC.jpeg" width={500} />
+    <Image src="/docs/images/integrations/guides/whatsapp/OmniDub for WhatsApp - 6.png" width={1000} height={600} style={{
+        width: '100%',
+        height: 'auto',
+        objectFit: 'contain'
+    }} />
 </div>
 
-> For a list of supported languages, click [here](./supported-languages).
 
-#### Conversion in Progress
-- Once you select a language, the bot will then get to work on converting your voice note. it takes a while to convert your message.
+### Play your Dubbed Audio
+
+After a short while, the bot will send you a dubbed audio. Simply tap on the Play icon, to listen to it.
+
+That's it! You've successfully used Omni's WhatsApp bot to dub your voice notes. If you have any questions or encounter issues, feel free to reach out. Happy dubbing!🎙️🌐
 
 <div style={{
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 30,
+    width: '100%'
 }}>
-    <img src="https://i.imgur.com/sLY9ARP.jpeg" width={500} />
+    <Image src="/docs/images/integrations/guides/whatsapp/OmniDub for WhatsApp - 7.png" width={1000} height={600} style={{
+        width: '100%',
+        height: 'auto',
+        objectFit: 'contain'
+    }} />
 </div>
+
+---
 
 <div style={{
     fontStyle: 'italic',
@@ -122,16 +173,6 @@ After that, you will be navigated to the WhatsApp application and a new chat wil
 - See the [list of supported languages](/guide/integrations/supported-languages).
 - OmniDub will notify you when the translation is ready for playback.
 - Feel free to experiment with different languages for diverse translation experiences!
-</div>
-
-<div 
-    style={{
-        fontSize: 20,
-        fontWeight: 'bold',
-        marginTop: 30,
-    }}
->
-That's it! You've successfully used Omni's WhatsApp bot to dub your voice notes. If you have any questions or encounter issues, feel free to reach out. Happy dubbing!🎙️🌐
 </div>
 
 ## Troubleshooting
