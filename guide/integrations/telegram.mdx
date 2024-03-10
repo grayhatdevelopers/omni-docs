@@ -1,4 +1,5 @@
 import ReactPlayer from 'react-player'
+import Image from 'next/image'
 
 # Telegram Bot Docs
 
@@ -13,9 +14,13 @@ import ReactPlayer from 'react-player'
     }} url='https://youtu.be/VrKg1WPw9LU' autoPlay muted={true} controls={true}/>
 </div> */}
 
+Use the official Telegram bot for quick, on-the-go dubbing for your Telegram DMs.
+
 ## Getting started
 
 You can interact with the Omni Telegram Bot by just sending a message to the bot directly on Telegram. Click [here](https://telegram.me/OmniDubBot) to get started.
+
+**Note:** The OmniDub Telegram Bot is not functional in groups *yet*.
 
 ---
 
@@ -23,26 +28,94 @@ You can interact with the Omni Telegram Bot by just sending a message to the bot
 
 With OmniDub, you can seamlessly translate your audio files into any language you desire. Follow the straightforward steps below to start dubbing your audio files on Telegram.
 
-### Step 1: Start a Conversation!
-Send any message like 'Hey!' to start a conversation with the bot and then follow the guide accordingly.
+### Start a Conversation!
+You'll see a "Start" button when you interact with the bot for the first time. Tap it to proceed.
 
-### Step 2: Upload an Audio File
-Click on the file upload icon and choose the audio file you want to dub. You can also record a voice note and send it.
+<div style={{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 30,
+    width: '100%'
+}}>
+    <Image src="/docs/images/integrations/guides/telegram/OmniDub for Telegram - 1.png" width={1000} height={600} style={{
+        width: '100%',
+        height: 'auto',
+        objectFit: 'contain'
+    }} />
+</div>
 
-### Step 3: Choose a Language
-After uploading the audio file, specify the language you want for the resultant audio by tapping on the provided list.
+### Upload an Audio File
+Hold the "Record" button to record a voice note, and speak whatever you want to be dubbed.
 
-### Step 4: "Thinking..."
-The bot will display a message as it processes and converts your audio file.
+<div style={{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 30,
+    width: '100%'
+}}>
+    <Image src="/docs/images/integrations/guides/telegram/OmniDub for Telegram - 3.png" width={1000} height={600} style={{
+        width: '100%',
+        height: 'auto',
+        objectFit: 'contain'
+    }} />
+</div>
 
-### Step 5: File Display
-After a few seconds, the bot will showcase the dubbing result, providing you with the translated audio file.
+### Choose a Language
+After uploading the audio file, the Telegram Bot will give you a list of languages. Tap on the language you want to dub your audio to.
 
 > For a list of supported languages, click [here](./supported-languages).
 
-> Note: OmniDub will notify you when the translation is ready for playback.
+<div style={{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 30,
+    width: '100%'
+}}>
+    <Image src="/docs/images/integrations/guides/telegram/OmniDub for Telegram - 4.png" width={1000} height={600} style={{
+        width: '100%',
+        height: 'auto',
+        objectFit: 'contain'
+    }} />
+</div>
 
-### Troubleshooting
+### "Thinking..."
+The bot will display a message as it processes and converts your audio file.
+
+<div style={{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 30,
+    width: '100%'
+}}>
+    <Image src="/docs/images/integrations/guides/telegram/OmniDub for Telegram - 5.png" width={1000} height={600} style={{
+        width: '100%',
+        height: 'auto',
+        objectFit: 'contain'
+    }} />
+</div>
+
+### File Display
+After a few seconds, the bot will showcase the dubbing result, providing you with the translated audio file.
+
+<div style={{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 30,
+    width: '100%'
+}}>
+    <Image src="/docs/images/integrations/guides/telegram/OmniDub for Telegram - 6.png" width={1000} height={600} style={{
+        width: '100%',
+        height: 'auto',
+        objectFit: 'contain'
+    }} />
+</div>
+
+## Troubleshooting
 
 The Telegram bot may respond with an error message, or become infinitely stuck. If this happens, please try writing `cancel`, then trying again after a while. If the issue persists, contact our support on [Discord](https://discord.gg/8a3A2EcrEC).
 
