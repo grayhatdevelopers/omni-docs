@@ -2,7 +2,7 @@ import {Callout} from 'nextra/components'
 
 # Examples of API Usage
 
-We've built some common use cases for both copy-pasting, and to help developers.
+We've built some common use cases for both copy-pasting, and to inspire developers to use our API creatively.
 
 See the [API Reference](https://getomni.app/api) to see the API endpoints.
 
@@ -10,9 +10,25 @@ See the [API Reference](https://getomni.app/api) to see the API endpoints.
 Would you like to add an example? Open a [Pull Request](https://github.com/grayhatdevelopers/omni-docs/blob/main/developers/examples.mdx) on this page.
 </Callout>
 
-## Different models, different use cases.
+## Use cases 
 
-You can create scripts which use models conditionally. In the following NodeJS example, we use `babelfish-micro` for audios, and `babelfish` for video.
+You can use Omni to translate voice notes, create multilingual soundboards, teach different languages, and hold multilingual seminars, amongst other ideas.
+
+To get a general idea of what you can build, you can take inspiration from our [current integrations](https://www.getomni.app/docs/guide).
+
+### Social and Communication Apps
+
+We've built [SuperChat](https://omni-flutter-18301.web.app/#/chat-view) to demonstrate general AI capabilities in a VoIP app. It uses Omni to translate voice notes.
+
+### Gaming
+
+[Guess the Language](https://guessthelanguage.grayhat.studio/) is an awesome game which demonstrates how you can use Omni's translation feature for a language-guessing game.
+
+## Scripts
+
+### Different models, different use cases.
+
+You can create scripts which use models conditionally. In the following NodeJS example, we use `babelfish-micro` for audio, and `babelfish` for video.
 
 ```typescript copy showLineNumbers filename="dub_script.js"
 const axios = require('axios');
