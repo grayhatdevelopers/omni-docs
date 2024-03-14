@@ -24,6 +24,9 @@ export default {
     'readme': {
         title: 'Open Source'
     },
+    'use-cases': {
+        title: 'Use Cases',
+    },
     '-- For users': {
         type: 'separator',
         "title": <SidebarTitleComponent>For users</SidebarTitleComponent>
